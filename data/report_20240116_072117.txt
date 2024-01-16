@@ -1,0 +1,28 @@
+Network Traffic Analysis Report
+====================================
+Statistics Summary:
+Total Connections             20803          
+Total Flows                   1953698        
+Average Flows per Connection  93.91          
+Most Active User IP                14             
+Most Active Users:
+IP 14                         1175417 flows  
+IP 12                         195713 flows   
+IP 11                         195691 flows   
+IP 18                         120203 flows   
+IP 19                         108777 flows   
+
+Most Active Days:
+09/18/2022                    4307.63 avg flows             
+09/17/2022                    1849.85 avg flows             
+08/17/2022                    170.57 avg flows              
+09/29/2022                    164.16 avg flows              
+09/20/2022                    141.65 avg flows              
+
+Top 5 Anomaly traffic:
+Date           Local IP  Remote ASN     Flows     
+07/01/2022     11        3265           519       
+07/01/2022     12        1312           218       
+07/01/2022     12        7018           933       
+07/01/2022     16        4134           14        
+07/01/2022     16        11908          13        
