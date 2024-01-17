@@ -8,12 +8,12 @@ import java.util.Map;
 public class ReportGenerator {
     private final List<DataModel> data;
     private final TrafficInspector trafficInspector;
-    private final Statistics statistics;
+    private final FileHandler fileHandler;
 
-    public ReportGenerator(List<DataModel> data, TrafficInspector trafficInspector, Statistics statistics) {
-        this.data = data;
+    public ReportGenerator(FileHandler fileHandler, TrafficInspector trafficInspector) {
+        this.data = fileHandler.getData();
+        this.fileHandler = fileHandler;
         this.trafficInspector = trafficInspector;
-        this.statistics = statistics;
     }
 
     private String generateReport() {
@@ -65,8 +65,7 @@ public class ReportGenerator {
     }
 
     public void saveReportToFile() {
-        FileHandler fileHandler = new FileHandler();
-        fileHandler.writeToFile(generateUniqueReportName(), generateReport());
+                fileHandler.writeToFile(generateUniqueReportName(), generateReport());
     }
 
     private String generateUniqueReportName() {

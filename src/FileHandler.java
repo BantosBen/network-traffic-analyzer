@@ -5,9 +5,19 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class FileHandler {
 
-    public List<DataModel> readCSV(String filePath) {
+public class FileHandler {
+    private List<DataModel> data;
+
+    public List<DataModel> getData() {
+        return data;
+    }
+
+    public FileHandler() {
+        this.data = new ArrayList<>();
+    }
+
+    public void readCSV(String filePath) {
         List<DataModel> dataList = new ArrayList<>();
         try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
             String line;
@@ -21,7 +31,7 @@ public class FileHandler {
         } catch (IOException e) {
             System.out.println("Error reading file: " + e.getMessage());
         }
-        return dataList;
+        this.data = dataList;
     }
 
     public void writeToFile(String filePath, String content) {
